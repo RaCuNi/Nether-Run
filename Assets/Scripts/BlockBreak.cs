@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BlockBreak : MonoBehaviour {
 
-	float BLOCK_IN_MONITER = 20;
-	float BLOCK_WIDTH = 0.32f;
+	float BLOCK_IN_MONITER = 7;
+	float BLOCK_WIDTH = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +18,7 @@ public class BlockBreak : MonoBehaviour {
 	}
 
 	void BreakBlock() {
-		GameObject p = GameObject.Find("Dark_Mage");
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
 		float half_cam = p.transform.position.x - BLOCK_WIDTH * BLOCK_IN_MONITER / 2;
 
 		float block_posx = this.transform.position.x;

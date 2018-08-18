@@ -21,8 +21,8 @@ public class BlockCreate : MonoBehaviour {
 	}
 
 	void CreateBlock() {
-			GameObject player = GameObject.Find("Dark_Mage");
-			Vector3 block_pos = new Vector3 (player.transform.position.x + 2.56f, -0.32f, 0);
-		    Instantiate(Resources.Load ("FloorBlock"), block_pos, Quaternion.identity);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+			Vector3 block_pos = new Vector3 (player.transform.position.x + 3f, -0.7f, 0);
+		    Instantiate(Resources.Load ("Ground"), block_pos, Quaternion.identity);
 	}
 }

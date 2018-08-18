@@ -14,7 +14,7 @@ public class CamMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		GameObject player = GameObject.Find("Dark_Mage");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
 
 		this.transform.position = new Vector3 (player.transform.position.x, player.transform.position.y, -10);
 
