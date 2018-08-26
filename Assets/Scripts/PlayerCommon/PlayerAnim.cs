@@ -24,9 +24,16 @@ public class PlayerAnim : MonoBehaviour {
             StartCoroutine(Jump());
         }
 
-        if(Input.GetKeyDown(KeyCode.DownArrow) && is_jumping == false && is_sliding == false)
+        if(Input.GetKey(KeyCode.DownArrow) && is_jumping == false && !is_sliding)
         {
-            StartCoroutine(Slide());
+            Slide();
+        }
+
+        if(Input.GetKeyUp(KeyCode.DownArrow)){
+            anim.SetBool("is_sliding", false);
+            anim.Play("Run");
+            //anim.SetBool("is_sliding", false);
+            //anim.ResetTrigger("doSliding");
         }
 
         if(Input.GetKeyDown(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.DownArrow)) {
@@ -49,11 +56,11 @@ public class PlayerAnim : MonoBehaviour {
         anim.SetBool("is_jumping", false);
     }
 
-    IEnumerator Slide() {
-        anim.ResetTrigger("doSliding");
+    void Slide() {
+        //anim.ResetTrigger("doSliding");
         anim.SetBool("is_sliding", true);
         anim.SetTrigger("doSliding");
-        yield return new WaitForSecondsRealtime(0.7f);
-        anim.SetBool("is_sliding", false);
+        //yield return new WaitForSecondsRealtime(0.7f);
+        
     }
 }
