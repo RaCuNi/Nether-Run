@@ -6,6 +6,8 @@ public class BGGrassBreak : MonoBehaviour {
 
 	float BG_IN_MONITER = 1;
 	float BG_WIDTH = 6.73f;
+	public float ScrollSpeed = 0.5f;
+	float TargetOffset;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +32,6 @@ public class BGGrassBreak : MonoBehaviour {
 
     void MoveBG()
     {
-        this.transform.position -= new Vector3(3.365f, 0, 0);
+        this.transform.position -= new Vector3(6.73f, 0, 0);
     }
 }
